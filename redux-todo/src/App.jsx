@@ -1,9 +1,6 @@
-import Task from "./Task";
-import Form from "./Form";
 import Header from './Header';
 import MainDrawer from './MainDrawer';
-import { Container } from "@mui/material";
-import { Box } from "@mui/material";
+import { Outlet } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
@@ -18,13 +15,7 @@ export default function App() {
 
       <MainDrawer/>
 
-      <Container>
-        <Box sx={{mx: {lg:20, md: 10}}}>
-          <Form />
-          <Task  />
-        </Box>
-      </Container>
-      
+      <Outlet />
     </>
   );
 }

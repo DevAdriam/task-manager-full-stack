@@ -11,11 +11,13 @@ import { ThemeContext } from "./ThemeApp";
 
 import { useDispatch } from "react-redux";
 import { clear, toggleDrawer } from './features/todo/todoSlice'
+import { useLocation } from "react-router-dom";
 
 export default function Header({count}) {
   const {mode, setMode} = useContext(ThemeContext)
   const [showMenu, setShowMenu] = React.useState(false);
   const dispatch = useDispatch();
+  const {pathname} = useLocation();
 
   return (
     <Box sx={{ flexGrow: 1, mb: 3 }}>

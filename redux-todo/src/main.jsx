@@ -4,16 +4,29 @@ import ThemeApp from './ThemeApp'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import About from './About'
+import Home from './Home'
+import Contact from './Contact'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <ThemeApp />
+    element: <ThemeApp />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: '/about', 
+        element: <About />
+      },
+      {
+        path: '/contact',
+        element: <Contact />
+      }
+    ]
   },
-  {
-    path: '/about', 
-    element: <About />
-  }
+  
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
