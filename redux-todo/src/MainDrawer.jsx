@@ -36,36 +36,36 @@ export default function MainDrawer() {
                     </Box>
 
                     <List sx={{mt: 10}}>
-                        <ListItem>
-                            <Link to="/">
-                                <ListItemButton>
-                                    <ListItemIcon>
-                                        <HomeIcon />
-                                    </ListItemIcon>
-                                    <ListItemText secondary="Home" />
-                                </ListItemButton>
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link to="/about">
-                                <ListItemButton>
-                                    <ListItemIcon>
-                                        <AccountCircleIcon />
-                                    </ListItemIcon>
-                                    <ListItemText secondary="About" />
-                                </ListItemButton>
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link to="/contact">
-                                <ListItemButton>
-                                    <ListItemIcon>
-                                        <MailIcon />
-                                    </ListItemIcon>
-                                    <ListItemText secondary="Contact" />
-                                </ListItemButton>
-                            </Link>
-                        </ListItem>
+                        <Link to="/" onClick={() => dispatch(toggleDrawer())}>
+                            <ListItem>
+                                    <ListItemButton>
+                                        <ListItemIcon>
+                                            <HomeIcon />
+                                        </ListItemIcon>
+                                        <ListItemText secondary="Home" />
+                                    </ListItemButton>
+                            </ListItem>
+                        </Link>
+                        <Link to="/about" onClick={() => dispatch(toggleDrawer())}>
+                            <ListItem>
+                                    <ListItemButton>
+                                        <ListItemIcon>
+                                            <AccountCircleIcon />
+                                        </ListItemIcon>
+                                        <ListItemText secondary="About" />
+                                    </ListItemButton>
+                            </ListItem>
+                        </Link>
+                        <Link to="/contact" onClick={() => dispatch(toggleDrawer())}>
+                            <ListItem>
+                                    <ListItemButton>
+                                        <ListItemIcon>
+                                            <MailIcon />
+                                        </ListItemIcon>
+                                        <ListItemText secondary="Contact" />
+                                    </ListItemButton>
+                            </ListItem>
+                        </Link>
                     </List>
                 </Box>
             </Drawer>

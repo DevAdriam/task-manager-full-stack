@@ -46,25 +46,31 @@ export default function Header({count}) {
               </IconButton>
             )}
 
-            <IconButton onClick={e => setShowMenu(e.currentTarget)}>
-              <MoreVertIcon></MoreVertIcon>
-            </IconButton>
+            {
+              pathname === '/' && (
+                <>
+                  <IconButton onClick={e => setShowMenu(e.currentTarget)}>
+                    <MoreVertIcon></MoreVertIcon>
+                  </IconButton>
 
-            <Menu 
-              anchorEl={showMenu}
-              open={Boolean(showMenu)}
-              onClose={() => setShowMenu(false)}
-            >
-              <MenuItem 
-                onClick={()=> {
-                  setShowMenu(false)
-                  dispatch(clear())
-                }}
-                sx={{width:200}}
-              >
-                Clear
-              </MenuItem>
-            </Menu>
+                  <Menu 
+                    anchorEl={showMenu}
+                    open={Boolean(showMenu)}
+                    onClose={() => setShowMenu(false)}
+                  >
+                    <MenuItem 
+                      onClick={()=> {
+                        setShowMenu(false)
+                        dispatch(clear())
+                      }}
+                      sx={{width:200}}
+                    >
+                      Clear
+                    </MenuItem>
+                  </Menu>
+                </>
+              )
+            }
         </Toolbar>
       </AppBar>
     </Box>
